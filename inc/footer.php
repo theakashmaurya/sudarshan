@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p class="text-center">
-					<a href="index.php"><?= base64_decode($sitename); ?></a> | Powered by <a href="https://www.webman.net.in/sudarshan">Sudarshan</a>
+					<a href="index.php"><?= base64_decode($sitename); ?></a> | Powered by <a href="https://www.codebrotherindia.com/Sudarshan" rel="nofollow" target="_blank">Sudarshan WB</a>
 				</p>
 			</div>
 		</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2022 at 12:01 PM
+-- Generation Time: Nov 19, 2022 at 12:14 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,6 +39,13 @@ CREATE TABLE `contents` (
   `pageid` int(11) NOT NULL,
   `orderno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contents`
+--
+
+INSERT INTO `contents` (`id`, `type`, `image`, `heading`, `subheading`, `content`, `bgcolor`, `fgcolor`, `pageid`, `orderno`) VALUES
+(1, 'Slider', '', 'SG9tZXBhZ2UgU2xpZGVy', '', 'MQ==', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -97,9 +104,9 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id`, `sett_option`, `sett_value`) VALUES
 (1, 'paymentlink', 'https://test.instamojo.com/@mr_akashmaurya/l381ddab2885e45f6a5c1be50e00b0e3d/'),
-(2, 'sitename', ''),
+(2, 'sitename', 'U3VkYXJzaGFu'),
 (3, 'sitetagline', 'V2Vic2l0ZSBCdWlsZGVy'),
-(4, 'navcolor', 'light'),
+(4, 'navcolor', 'dark'),
 (6, 'whatsapp', '919044582946'),
 (7, 'headercode', ''),
 (8, 'phone', '9044582946');
@@ -116,6 +123,15 @@ CREATE TABLE `uploads` (
   `filename` text NOT NULL,
   `widget_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `uploads`
+--
+
+INSERT INTO `uploads` (`id`, `description`, `filename`, `widget_id`) VALUES
+(1, 'Easy to build websites', '19-11-2022-12-10-55-slides (2).jpg', 1),
+(2, 'Not technical skills required', '19-11-2022-12-10-55-slides (3).jpg', 1),
+(3, 'Create website in minutes', '19-11-2022-12-10-55-slides (1).jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -137,7 +153,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `email`, `password`, `type`, `active`) VALUES
-(1, 'Administrator', 'admin@zmail.com', 'admin', 'A', 'Y');
+(1, 'Administrator', 'admin@zmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'A', 'Y');
 
 -- --------------------------------------------------------
 
@@ -150,6 +166,13 @@ CREATE TABLE `widgets` (
   `type` varchar(35) NOT NULL,
   `title` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `widgets`
+--
+
+INSERT INTO `widgets` (`id`, `type`, `title`) VALUES
+(1, 'Slider', 'SG9tZXBhZ2UgU2xpZGVy');
 
 --
 -- Indexes for dumped tables
@@ -209,7 +232,7 @@ ALTER TABLE `widgets`
 -- AUTO_INCREMENT for table `contents`
 --
 ALTER TABLE `contents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -233,7 +256,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -245,7 +268,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `widgets`
 --
 ALTER TABLE `widgets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

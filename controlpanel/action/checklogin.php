@@ -16,7 +16,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
 	if ($connStatus == true) {
 		
-		$getResults= $instance->getData("SELECT * FROM `users` WHERE `email`='".$email."' AND `password`='".$password."'");
+		$getResults= $instance->getData("SELECT * FROM `users` WHERE `email`='".$email."' AND `password`='".md5($password)."'");
 
 		if($getResults != false){
 			while ($getResults_row = mysqli_fetch_array($getResults)) {

@@ -20,7 +20,7 @@ if (isset($_POST['newpassword']) && $_POST['mastercode']=="QAZwsx@789") {
 
 	if ($connStatus == true) {
 
-		$result = $instance->runQuery("UPDATE `users` SET `password`='".$newpassword."' WHERE `id`=".$_SESSION['userid']);
+		$result = $instance->runQuery("UPDATE `users` SET `password`='".md5($newpassword)."' WHERE `id`=".$_SESSION['userid']);
 
 		if($result == true){
 			
